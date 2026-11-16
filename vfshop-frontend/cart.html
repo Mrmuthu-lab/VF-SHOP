@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VF SHOP - Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">🌱 VF SHOP</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html" class="active">🛒 Cart</a>
+            <a href="login.html">Login</a>
+            <a href="profile.html">👤 Profile</a>
+        </div>
+    </nav>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+
+        <div class="cart-title">
+            <h1>Your Shopping Cart 🛒</h1>
+            <p>Fresh products selected by you</p>
+        </div>
+
+        <div class="cart-container">
+
+            <!-- Cart Items — rendered by cart.js -->
+            <div class="cart-items">
+                <h2>Cart Items</h2>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="summary">
+
+                <h2>Order Summary</h2>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span class="summary-subtotal">₹0</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery</span>
+                    <span class="summary-delivery">₹0</span>
+                </div>
+
+                <div class="summary-row discount">
+                    <span>Discount</span>
+                    <span class="summary-discount">- ₹0</span>
+                </div>
+
+                <hr>
+
+                <div class="summary-total">
+                    <span>Total</span>
+                    <strong class="summary-total-amount">₹0</strong>
+                </div>
+
+                <!-- Coupon -->
+                <!-- Coupon -->
+                <div class="coupon">
+    <input type="text" id="couponCode"
+           placeholder="Enter coupon code">
+
+    <button type="button" onclick="applyCoupon()">
+        Apply
+    </button>
+</div>
+
+<p id="coupon-message"></p>
+
+                <p id="coupon-message"></p>
+
+                <!-- Checkout -->
+                <button class="checkout-btn" id="checkout-btn">
+                    Proceed to Checkout →
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 VF SHOP | Freshness You Can Trust 🌱</p>
+    </footer>
+
+    <!-- Cart JS -->
+    <script src="cart.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VF Shop - Products</title>
+
+    <link rel="stylesheet" href="product.css">
+</head>
+
+<body>
+
+    <script>
+    const user = localStorage.getItem("vfshopUser");
+
+    if (!user) {
+        window.location.replace("login.html");
+    }
+</script>
+    <nav class="navbar">
+        <!-- Header -->
+        <div class="logo">
+            🌱 VF SHOP
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="vegetables.html">Vegetables</a>
+            <a href="fruits.html">Fruits</a>
+            <a href="greens.html">Greens</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </nav>
+
+
+    <!-- Page Title -->
+    <!-- <section class="product-title">
+        <h2>Fresh Vegetables</h2>
+        <p>Fresh, healthy and quality vegetables delivered to your doorstep.</p>
+    </section> -->
+
+
+    <!-- Products -->
+    <main class="prod-main">
+
+        <!-- Product 1 -->
+        <div class="prod-muthu">
+            <img src="assets/tomato.jpg" alt="Fresh Tomato">
+            <h3>Fresh Tomato</h3>
+            <p>₹20 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="prod-muthu" data-id="3">
+            <img src="assets/small tomato.jpg" alt="Fresh Beans">
+            <h3>Fresh Small Tomato</h3>
+            <p>₹10 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="prod-muthu">
+            <img src="assets/potato.jpg" alt="Fresh Potato">
+            <h3>Fresh Potato</h3>
+            <p>₹25 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/sand potato.jpg" alt="Fresh Beans">
+            <h3>Fresh Sand Potato</h3>
+            <p>₹37 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/sambaronion.jpg" alt="Fresh Beans">
+            <h3>Fresh Sambar Onion</h3>
+            <p>₹90 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="prod-muthu">
+            <img src="assets/onion.jpg" alt="Fresh Onion">
+            <h3>Fresh Onion</h3>
+            <p>₹39 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="prod-muthu">
+            <img src="assets/onion big.jpg" alt="Fresh Beans">
+            <h3>Fresh Onion Big</h3>
+            <p>₹50 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="prod-muthu">
+            <img src="assets/carrot.jpg" alt="Fresh Carrot">
+            <h3>Fresh Carrot</h3>
+            <p>₹90 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="prod-muthu">
+            <img src="assets/beans.jpg" alt="Fresh Beans">
+            <h3>Fresh Beans</h3>
+            <p>₹110 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="prod-muthu">
+            <img src="assets/beetroot.jpg" alt="Fresh Beetroot">
+            <h3>Fresh Beetroot</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="prod-muthu">
+            <img src="assets/sundakai.jpg" alt="Fresh Beans">
+            <h3>Fresh sundakai</h3>
+            <p>₹100 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="prod-muthu">
+            <img src="assets/katahriujala.jpg" alt="Fresh Brinjal">
+            <h3>Fresh Brinjal</h3>
+            <p>₹100 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="prod-muthu">
+            <img src="assets/brinjal vari.jpg" alt="Fresh Beans">
+            <h3>Fresh Brinjal vari</h3>
+            <p>₹100 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="prod-muthu">
+            <img src="assets/brinjal palayam.jpg" alt="Fresh Beans">
+            <h3>Fresh Brinjal Palayam</h3>
+            <p>₹100 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="prod-muthu">
+            <img src="assets/avarakai.jpg" alt="Fresh Beans">
+            <h3>Fresh Broad Beans</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="prod-muthu">
+            <img src="assets/koes.jpg" alt="Fresh Cabbage">
+            <h3>Fresh Cabbage</h3>
+            <p>₹35 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="prod-muthu">
+            <img src="assets/cauliflower.jpg" alt="Fresh Cauliflower">
+            <h3>Cauliflower</h3>
+            <p>₹35 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="prod-muthu">
+            <img src="assets/vendakai.jpg" alt="Fresh Lady Finger">
+            <h3>Lady Finger</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/coconut.jpg" alt="Fresh Beans">
+            <h3>Fresh Coconut</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/garlic.jpg" alt="Fresh Beans">
+            <h3>Fresh Garlic</h3>
+            <p>₹280 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/mountain-garlic.jpg" alt="Fresh Beans">
+            <h3>Fresh Garlic</h3>
+            <p>₹350 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/ginger.jpg" alt="Fresh Beans">
+            <h3>Fresh Ginger</h3>
+            <p>₹120 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/kovakai.jpg" alt="Fresh Beans">
+            <h3>Fresh Kovakai</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/kudaimilaga.jpg" alt="Fresh Beans">
+            <h3>Fresh Capsicum</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/lemonkai.jpg" alt="Fresh Beans">
+            <h3>Fresh Lemon</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/apple.jpg" alt="Fresh Beans">
+            <h3>Fresh Apple</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/banana.jpg" alt="Fresh Beans">
+            <h3>Fresh Banana</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/Bracoli.jpg" alt="Fresh Beans">
+            <h3>Fresh Bracoli</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/chilli.jpg" alt="Fresh Beans">
+            <h3>Fresh Chilli</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/chow chow.jpg" alt="Fresh Beans">
+            <h3>Fresh Chow Chow</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/grapes.jpg" alt="Fresh Beans">
+            <h3>Fresh Grapes</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/green amaranth.jpg" alt="Fresh Beans">
+            <h3>Fresh Greeen Amaranth</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/guva.jpg" alt="Fresh Beans">
+            <h3>Fresh Guva</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/karunaikilanku.jpg" alt="Fresh Beans">
+            <h3>Fresh Karunaikilanku</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/karunakazhangu.jpg" alt="Fresh Beans">
+            <h3>Fresh karuna</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/karuveppilai.jpg" alt="Fresh Beans">
+            <h3>Fresh Karuveppillai</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/lemon.jpg" alt="Fresh Beans">
+            <h3>Fresh Lemon</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/madhulai.jpg" alt="Fresh Beans">
+            <h3>Fresh Madhulai</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/malli.jpg" alt="Fresh Beans">
+            <h3>Fresh Malli</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/mango.jpg" alt="Fresh Beans">
+            <h3>Fresh Mango</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/maravalli.jpg" alt="Fresh Beans">
+            <h3>Fresh Maravalli</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/maruthani.jpg" alt="Fresh Beans">
+            <h3>Fresh Maruthani</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/mint.jpg" alt="Fresh Beans">
+            <h3>Fresh Mint</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/mullangi.jpg" alt="Fresh Beans">
+            <h3>Fresh Mullangi</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/murungai keerai.jpg" alt="Fresh Beans">
+            <h3>Fresh Murungai Keerai</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/murungaikai.jpg" alt="Fresh Beans">
+            <h3>Fresh MurungaiKai</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/mushroom.jpg" alt="Fresh Beans">
+            <h3>Fresh Mushroom</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/nellikai.jpg" alt="Fresh Beans">
+            <h3>Fresh Nellaikai</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/nookal.jpg" alt="Fresh Beans">
+            <h3>Fresh Nookal</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/orange.jpg" alt="Fresh Beans">
+            <h3>Fresh Orange</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/pagarkai.jpg" alt="Fresh Beans">
+            <h3>Fresh Pagarkai</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/papaya.jpg" alt="Fresh Beans">
+            <h3>Fresh Papaya</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/pear.jpg" alt="Fresh Beans">
+            <h3>Fresh Pear</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/peas.jpg" alt="Fresh Beans">
+            <h3>Fresh Peas</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/peerkangai.jpg" alt="Fresh Beans">
+            <h3>Fresh PeerkanKai</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/pidikaruanikilangu.jpg" alt="Fresh Beans">
+            <h3>Fresh Pidikarunai Kazhanku</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/pineapple.jpg" alt="Fresh Beans">
+            <h3>Fresh PineApple</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/poosani.jpg" alt="Fresh Beans">
+            <h3>Fresh Poosani</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/sevvalai.jpg" alt="Fresh Beans">
+            <h3>Fresh Sevvalai</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/tropical.jpg" alt="Fresh Beans">
+            <h3>Fresh Tropical</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/valakai.jpg" alt="Fresh Beans">
+            <h3>Fresh Valakai</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/vallarai.jpg" alt="Fresh Beans">
+            <h3>Fresh Vallarai</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="prod-muthu">
+            <img src="assets/watermelon.jpg" alt="Fresh Beans">
+            <h3>Fresh watermelon</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="prod-muthu">
+            <img src="assets/vethalai.jpg" alt="Fresh Beans">
+            <h3>Fresh Vethalai</h3>
+            <p>₹70 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+   <footer class="footer">
+        <div class="footer-head">
+            <h1>VF SHOP</h1>
+            <p style="margin-bottom: 48px;">Fresh fruits and vegetables<br>
+                delivered to your doorstep.</p>
+        </div>
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>QUICK LINKS</h3>
+                <a href="index.html">Home</a>
+                <a href="product.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>CUSTOMER SERVICE</h3>
+                <a href="login.html">Login</a>
+                <a href="regishtmlter.">Register</a>
+                <a href="forgotpassword.html">Forgot Password</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>CONTACT INFO</h3>
+                <p>📍 Chennai, Tamil Nadu</p>
+                <p>📞 +91 9876543210</p>
+                <p>📧 support@freshbasket.com</p>
+            </div>
+
+            <div class="map">
+                <iframe src="https://www.google.com/maps?q=Chennai,Tamil%20Nadu&output=embed" width="100%" height="250"
+                    style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 FreshBasket. All Rights Reserved.
+        </div>
+    </footer>
+<script src="cart.js"></script>
+
+<script src="product.js"></script>
+</body>
+
+</html>

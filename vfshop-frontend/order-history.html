@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VF SHOP - Order History</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7f2;
+            color: #333;
+        }
+
+        nav {
+            background: #245c35;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        nav h2 {
+            color: #fff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .page-title {
+            margin-bottom: 25px;
+            color: #245c35;
+        }
+
+        .order-card {
+            background: white;
+            border-radius: 10px;
+            padding: 22px;
+            margin-bottom: 22px;
+            box-shadow: 0 2px 10px #00000012;
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .order-header h3 {
+            color: #245c35;
+            margin-bottom: 7px;
+        }
+
+        .status {
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            background: #e8f5e9;
+            color: #245c35;
+            height: fit-content;
+        }
+
+        .order-products {
+            margin: 15px 0;
+        }
+
+        .product-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .summary {
+            max-width: 350px;
+            margin: 18px 0 0 auto;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 7px 0;
+        }
+
+        .summary-total {
+            border-top: 1px solid #ddd;
+            margin-top: 8px;
+            padding-top: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #245c35;
+        }
+
+        .cancel-btn {
+            margin-top: 18px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 5px;
+            background: #d93636;
+            color: white;
+            cursor: pointer;
+        }
+
+        .cancel-btn:hover {
+            background: #b82020;
+        }
+
+        .empty-message,
+        .loading,
+        .error-message {
+            background: white;
+            padding: 35px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .empty-message a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #245c35;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 94%;
+            }
+
+            .order-card {
+                padding: 15px;
+            }
+
+            .summary {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>VF SHOP</h2>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="cart.html">Cart</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1 class="page-title">My Order History</h1>
+
+        <div id="orders-container">
+            <div class="loading">Loading your orders...</div>
+        </div>
+
+    </div>
+
+    <script src="order-history.js"></script>
+
+</body>
+</html>

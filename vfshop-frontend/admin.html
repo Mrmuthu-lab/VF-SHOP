@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VF SHOP - Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>VF <span>SHOP</span></h2>
+                <p>ADMIN PANEL</p>
+            </div>
+
+            <nav>
+                <a href="#" class="active">📊 Dashboard</a>
+                <a href="#orders-section">📦 Orders</a>
+                <a href="customers.html">👥 Customers</a>
+                <a href="products.html">🛒 Products</a>
+                <a href="index.html">🏠 Visit Website</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>VF SHOP Admin</p>
+                <small>Management Panel</small>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome to VF SHOP Admin Panel</p>
+                </div>
+
+                <div class="admin-profile">
+                    <div class="profile-icon">A</div>
+                    <div>
+                        <strong>Administrator</strong>
+                        <small>Admin</small>
+                    </div>
+                </div>
+            </header>
+
+            <!-- STATISTICS -->
+            <section class="stats-container">
+
+                <div class="stat-card total">
+                    <div class="stat-icon">📦</div>
+                    <div>
+                        <p>Total Orders</p>
+                        <h2 id="total-orders">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card customers">
+                    <div class="stat-icon">👥</div>
+                    <div>
+                        <p>Customers</p>
+                        <h2 id="stat-customers">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card pending">
+                    <div class="stat-icon">⏳</div>
+                    <div>
+                        <p>Pending Orders</p>
+                        <h2 id="pending-orders">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card shipped">
+                    <div class="stat-icon">🚚</div>
+                    <div>
+                        <p>Shipped Orders</p>
+                        <h2 id="shipped-orders">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card delivered">
+                    <div class="stat-icon">✅</div>
+                    <div>
+                        <p>Delivered Orders</p>
+                        <h2 id="delivered-orders">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card cancelled">
+                    <div class="stat-icon">❌</div>
+                    <div>
+                        <p>Cancelled Orders</p>
+                        <h2 id="cancelled-orders">0</h2>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ORDERS -->
+            <section class="orders-section" id="orders-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Customer Orders</h2>
+                        <p>Manage and track all customer orders</p>
+                    </div>
+
+                    <div class="download-actions">
+
+                        <button class="download-btn"
+                            id="download-orders-btn">
+                            📥 Download Orders
+                        </button>
+
+                        <button class="download-btn"
+                            id="download-users-btn">
+                            👥 Download Users
+                        </button>
+
+                        <button class="refresh-btn"
+                            id="refresh-btn">
+                            ↻ Refresh
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- SEARCH -->
+                <div class="search-container">
+                    <input
+                        type="text"
+                        id="search-order"
+                        placeholder="Search by Order ID or Customer Name...">
+                </div>
+
+                <!-- TABLE -->
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Products</th>
+                                <th>Order Date</th>
+                                <th>Amount</th>
+                                <th>Payment</th>
+                                <th>Status</th>
+                                <th>Update Status</th>
+                                <th>Bill</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="orders-table-body">
+                            <tr>
+                                <td colspan="9" class="loading">
+                                    Loading orders...
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p id="message" class="message"></p>
+
+            </section>
+
+            <footer>
+                © 2026 VF SHOP. All Rights Reserved.
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="admin.js"></script>
+
+</body>
+</html>

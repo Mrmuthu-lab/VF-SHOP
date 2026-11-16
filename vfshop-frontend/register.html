@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VF SHOP | Create account</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="auth-layout">
+    <section class="visual-panel">
+      <div class="brand"><span class="brand-mark">VF</span><span>VF SHOP</span></div>
+      <div class="visual-copy">
+        <p class="eyebrow">A FRESH START</p>
+        <h1>Make room<br>for freshness.</h1>
+        <p>Join VF SHOP for a simple, fresh way to shop your everyday essentials.</p>
+      </div>
+      <div class="visual-note">Picked with care. Packed with love.</div>
+    </section>
+
+    <section class="form-panel">
+      <div class="mobile-brand"><span class="brand-mark">VF</span><span>VF SHOP</span></div>
+      <div class="form-wrap">
+        <p class="eyebrow green">JOIN VF SHOP</p>
+        <h2>Create your account</h2>
+        <p class="muted">A few details and you're ready to go.</p>
+
+        <form id="registerForm">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" required>
+
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" placeholder="Your phone number" autocomplete="tel">
+
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Create a password" autocomplete="new-password" minlength="6" required>
+
+          <p id="message" class="message" aria-live="polite"></p>
+          <button class="primary-btn" type="submit" id="registerBtn">Create account</button>
+        </form>
+
+        <p class="switch-text">Already have an account? <a href="login.html">Login</a></p>
+      </div>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+</body>
+</html>

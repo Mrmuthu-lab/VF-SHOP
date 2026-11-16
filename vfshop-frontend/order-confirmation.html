@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - VF SHOP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5fff5;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .confirmation {
+            background: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 40px 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px #ddd;
+        }
+        .success { font-size: 65px; }
+        h1 { color: green; }
+        button {
+            background: green;
+            color: white;
+            border: 0;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation">
+        <div class="success">✅</div>
+        <h1>Order Placed Successfully!</h1>
+        <p>Thank you for shopping with VF SHOP.</p>
+        <h3 id="order-id"></h3>
+        <button onclick="location.href='product.html'">
+            Continue Shopping
+        </button>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const orderId = params.get("id");
+
+        document.getElementById("order-id").textContent =
+            orderId ? "Order ID: " + orderId : "Your order is confirmed!";
+    </script>
+</body>
+</html>

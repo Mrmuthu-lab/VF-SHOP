@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VF SHOP | Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="auth-layout">
+    <section class="visual-panel">
+      <div class="brand"><span class="brand-mark">VF</span><span>VF SHOP</span></div>
+      <div class="visual-copy">
+        <p class="eyebrow">FRESH EVERY DAY</p>
+        <h1>Good food.<br>Good mood.</h1>
+        <p>Fresh fruits and vegetables, carefully picked and delivered to your doorstep.</p>
+      </div>
+      <div class="visual-note">Naturally fresh. Always delicious.</div>
+    </section>
+
+    <section class="form-panel">
+      <div class="mobile-brand"><span class="brand-mark">VF</span><span>VF SHOP</span></div>
+      <div class="form-wrap">
+        <p class="eyebrow green">WELCOME BACK</p>
+        <h2>Login to your account</h2>
+        <p class="muted">Enter your details to continue shopping fresh.</p>
+
+        <form id="loginForm">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter your password"
+            autocomplete="current-password" required>
+
+          <div style="text-align:right; margin:10px 0 18px;">
+            <a href="forgot-password.html" style="color:#228b55; text-decoration:none; font-size:14px;">
+              Forgot Password?
+            </a>
+          </div>
+
+          <p id="message" class="message" aria-live="polite"></p>
+          <button class="primary-btn" type="submit" id="loginBtn">Login</button>
+        </form>
+
+        <p class="switch-text">New to VF SHOP? <a href="register.html">Create an account</a></p>
+        <p class="fine-print">By continuing, you agree to our Terms and Privacy Policy.</p>
+      </div>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+</body>
+
+</html>

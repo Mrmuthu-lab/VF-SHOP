@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VF SHOP - Customers</title>
+    <link rel="stylesheet" href="customers.css">
+</head>
+<body>
+
+<div class="admin-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">VF <span>SHOP</span></div>
+        <p class="admin-label">ADMIN PANEL</p>
+
+        <nav>
+            <a href="admin.html">📊 Dashboard</a>
+            <a href="admin.html">📦 Orders</a>
+            <a href="customers.html" class="active">👥 Customers</a>
+            <a href="products.html">🥬 Products</a>
+            <a href="index.html">🏠 Visit Store</a>
+        </nav>
+
+        <button class="logout-btn" onclick="logoutAdmin()">
+            ↪ Logout
+        </button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Customers</h1>
+                <p>Manage your VF SHOP customers</p>
+            </div>
+
+            <div class="admin-profile">
+                <span>👤</span>
+                <div>
+                    <strong>Administrator</strong>
+                    <small>Admin</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- CUSTOMER STATISTICS -->
+        <section class="stats-container">
+
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div>
+                    <p>Total Customers</p>
+                    <h2 id="total-customers">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🟢</div>
+                <div>
+                    <p>Registered Customers</p>
+                    <h2 id="registered-customers">0</h2>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CUSTOMER TABLE -->
+        <section class="customer-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Customer List</h2>
+                    <p>View all registered customers</p>
+                </div>
+
+                <button id="refresh-customers" class="refresh-btn">
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="search-container">
+                <input
+                    type="text"
+                    id="search-customer"
+                    placeholder="Search by name, email or phone..."
+                >
+            </div>
+
+            <!-- MESSAGE -->
+            <div id="customer-message" class="message"></div>
+
+            <!-- TABLE -->
+            <div class="table-wrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Customer Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="customers-table-body">
+                        <tr>
+                            <td colspan="5" class="loading">
+                                Loading customers...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 VF SHOP | Admin Dashboard
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="customers.js"></script>
+
+</body>
+</html>

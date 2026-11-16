@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VF SHOP | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+  <header class="topbar">
+    <a class="brand dark-brand" href="home.html"><span class="brand-mark">VF</span><span>VF SHOP</span></a>
+    <button class="logout-btn" id="logoutBtn">Logout</button>
+  </header>
+  <main class="home-content">
+    <p class="eyebrow green">FRESH PICKS FOR YOU</p>
+    <h1 id="welcomeTitle">Welcome to VF SHOP</h1>
+    <p class="muted">You're signed in. Your fresh shopping experience starts here.</p>
+    <div class="welcome-card">
+      <div class="welcome-icon">🥬</div>
+      <div>
+        <h2>Freshness is on the way</h2>
+        <p>Your account is connected to the VF SHOP backend. Product browsing and ordering can be added next.</p>
+      </div>
+    </div>
+  </main>
+  <script>
+    const user = JSON.parse(localStorage.getItem("vfshopUser") || "null");
+    if (!user) window.location.href = "login.html";
+    else document.getElementById("welcomeTitle").textContent = `Welcome, ${user.name || "to VF SHOP"}!`;
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("vfshopUser");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

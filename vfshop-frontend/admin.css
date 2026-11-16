@@ -1,0 +1,577 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f7f5;
+    color: #26352b;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 245px;
+    background: #123d2b;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.logo h2 {
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.logo h2 span {
+    color: #d5b44a;
+}
+
+.logo p {
+    color: #b6c8bd;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-top: 5px;
+}
+
+.sidebar nav {
+    margin-top: 55px;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 15px;
+    color: #dce9e0;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #267448;
+    color: white;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    border-top: 1px solid #466b57;
+    padding-top: 20px;
+}
+
+.sidebar-bottom p {
+    font-weight: bold;
+}
+
+.sidebar-bottom small {
+    color: #b6c8bd;
+}
+
+/* Main Content */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 28px;
+    color: #173e2b;
+}
+
+.topbar p {
+    color: #888;
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #237447;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.admin-profile small {
+    display: block;
+    color: #888;
+    margin-top: 4px;
+}
+
+/* Statistics */
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px 18px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+    border: 1px solid #edf0ed;
+}
+
+.stat-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    background: #edf5ef;
+}
+
+.stat-card p {
+    color: #777;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.stat-card h2 {
+    font-size: 26px;
+    color: #183d2a;
+}
+
+.pending .stat-icon {
+    background: #fff4dd;
+}
+
+.shipped .stat-icon {
+    background: #e4f0ff;
+}
+
+.delivered .stat-icon {
+    background: #e2f7e9;
+}
+
+.cancelled .stat-icon {
+    background: #ffe8e8;
+}
+
+/* Orders Section */
+
+.orders-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.section-header h2 {
+    color: #173e2b;
+    font-size: 21px;
+}
+
+.section-header p {
+    color: #888;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.refresh-btn {
+    padding: 11px 18px;
+    border: none;
+    background: #1f7041;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.refresh-btn:hover {
+    background: #155832;
+}
+
+/* Search */
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-container input:focus {
+    border-color: #267448;
+}
+
+/* Table */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 1000px;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f0f6f1;
+}
+
+th {
+    text-align: left;
+    padding: 15px 12px;
+    font-size: 12px;
+    color: #31553c;
+    white-space: nowrap;
+}
+
+td {
+    padding: 16px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    color: #555;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background: #fafcfb;
+}
+
+.order-id {
+    font-weight: bold;
+    color: #1d693e;
+}
+
+.customer-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.product-list {
+    min-width: 140px;
+    line-height: 1.8;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.status-placed {
+    background: #fff2d5;
+    color: #a66a00;
+}
+
+.status-confirmed {
+    background: #e9e4ff;
+    color: #6443ad;
+}
+
+.status-shipped {
+    background: #e0edff;
+    color: #2560aa;
+}
+
+.status-out-for-delivery {
+    background: #e1f5f3;
+    color: #137c70;
+}
+
+.status-delivered {
+    background: #dff5e5;
+    color: #1b7837;
+}
+
+.status-cancelled {
+    background: #ffe1e1;
+    color: #c02b2b;
+}
+
+/* Status Dropdown */
+
+.status-select {
+    padding: 9px 8px;
+    border: 1px solid #d4ded6;
+    border-radius: 6px;
+    background: white;
+    outline: none;
+    cursor: pointer;
+    font-size: 12px;
+    min-width: 145px;
+}
+
+.status-select:focus {
+    border-color: #237447;
+}
+
+.status-select:disabled {
+    background: #f2f2f2;
+    cursor: not-allowed;
+    color: #888;
+}
+
+.loading,
+.no-orders {
+    text-align: center;
+    padding: 35px;
+    color: #888;
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.message.success {
+    color: #218838;
+}
+
+.message.error {
+    color: #dc3545;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    color: #999;
+    padding: 30px 10px;
+    font-size: 12px;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+    .stats-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .sidebar nav {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .sidebar nav a {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .main-content {
+        padding: 18px;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .topbar {
+        align-items: flex-start;
+    }
+
+    .topbar h1 {
+        font-size: 23px;
+    }
+
+    .orders-section {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 420px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-profile {
+        font-size: 12px;
+    }
+
+    .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+.customer-name {
+    font-weight: bold;
+    color: #1d693e;
+    margin-bottom: 5px;
+}
+
+td small {
+    display: inline-block;
+    color: #777;
+    margin: 3px 0;
+    line-height: 1.5;
+}
+.customers .stat-icon {
+    background: #e4f0ff;
+}
+
+.download-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    background: #228b55;
+    color: white;
+    border: none;
+    padding: 11px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #176b40;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .download-actions {
+        width: 100%;
+    }
+
+    .download-btn,
+    .refresh-btn {
+        flex: 1;
+    }
+}
+
+
+/* =====================================
+   DOWNLOAD BUTTONS
+===================================== */
+
+.download-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.download-btn {
+    background: #228b55;
+    color: white;
+    border: none;
+    padding: 11px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #176b40;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   GENERATE BILL BUTTON
+===================================== */
+
+.bill-btn {
+    background: #228b55;
+    color: white;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.bill-btn:hover {
+    background: #176b40;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .download-actions {
+        width: 100%;
+    }
+
+    .download-btn,
+    .refresh-btn {
+        flex: 1;
+    }
+
+}

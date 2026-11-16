@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VF SHOP - Fresh Fruits & Vegetables</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Login Protection -->
+    <script>
+        const user = localStorage.getItem("vfshopUser");
+
+        if (!user) {
+            window.location.replace("login.html");
+        }
+    </script>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🌱 VF SHOP
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">🛒 Cart</a>
+            <a href="profile.html">👤 Profile</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                🌿 FRESH FROM FARM
+            </p>
+
+            <h1>
+                Fresh & Healthy
+                <br>
+                <span>Fruits & Vegetables</span>
+            </h1>
+
+            <p class="description">
+                Fresh, healthy and quality products
+                delivered directly to your doorstep.
+            </p>
+
+            <div class="shop-button">
+                <a href="product.html">
+                    <button>Shop Now →</button>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="assets/home.jpg" alt="Fresh Fruits and Vegetables">
+
+        </div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+
+        <div class="feature">
+            <div class="feature-icon">🌱</div>
+            <div>
+                <h3>100% Fresh</h3>
+                <p>Farm Fresh Products</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🚚</div>
+            <div>
+                <h3>Fast Delivery</h3>
+                <p>Quick Doorstep Delivery</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">💯</div>
+            <div>
+                <h3>Best Quality</h3>
+                <p>Quality Guaranteed</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Shop By Category -->
+    <section class="categories">
+
+        <div class="section-title">
+
+            <p>EXPLORE OUR PRODUCTS</p>
+
+            <h2>Shop By Category</h2>
+
+            <span>
+                Choose from our fresh and healthy collection
+            </span>
+
+        </div>
+
+        <div class="category-container">
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="assets/freshfruit.jpg" alt="Fresh Fruits">
+                </div>
+                <div class="category-menu">
+                    <h3>Fresh Fruits</h3>
+                    <p>Sweet, juicy and naturally fresh fruits.</p>
+                    <a href="fruits.html">Explore →</a>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="assets/freshveg.jpg" alt="Fresh Vegetables">
+                </div>
+                <div class="category-menu">
+                    <h3>Fresh Vegetables</h3>
+                    <p>Healthy and farm-fresh vegetables.</p>
+                    <a href="vegetables.html">Explore →</a>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="assets/freshgreens.jpg" alt="Fresh Greens">
+                </div>
+                <div class="category-menu">
+                    <h3>Fresh Greens</h3>
+                    <p>Nutritious and fresh leafy greens.</p>
+                    <a href="greens.html">Explore →</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Healthy Banner -->
+    <section class="healthy-banner">
+
+        <div>
+            <p>🌿 HEALTHY CHOICE</p>
+            <h2>Eat Fresh.<br>Stay Healthy.</h2>
+            <p>Fresh food for a healthier and happier life.</p>
+        </div>
+
+        <a href="product.html">
+            <button>Shop Fresh Products →</button>
+        </a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-head">
+            <h1>VF SHOP</h1>
+            <p>
+                Fresh fruits and vegetables<br>
+                delivered to your doorstep.
+            </p>
+        </div>
+
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>QUICK LINKS</h3>
+                <a href="index.html">Home</a>
+                <a href="product.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>CUSTOMER SERVICE</h3>
+                <a href="login.html">Login</a>
+                <a href="profile.html">My Profile</a>
+                <a href="register.html">Register</a>
+                <a href="forgot-password.html">Forgot Password</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>CONTACT INFO</h3>
+                <p>📍 Chennai, Tamil Nadu</p>
+                <p>📞 +91 9087924482</p>
+                <p>📧 support@vfshop.com</p>
+            </div>
+
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps?q=Chennai,Tamil%20Nadu&output=embed"
+                    width="100%"
+                    height="250"
+                    style="border:0;"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 VF SHOP. All Rights Reserved.
+        </div>
+
+    </footer>
+
+    <!-- Logout Function -->
+    <script>
+        const logoutBtn = document.getElementById("logoutBtn");
+
+        logoutBtn.addEventListener("click", function(event) {
+
+            event.preventDefault();
+
+            localStorage.removeItem("vfshopUser");
+
+            window.location.replace("login.html");
+
+        });
+    </script>
+
+</body>
+
+</html>

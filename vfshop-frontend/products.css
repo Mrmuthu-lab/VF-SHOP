@@ -1,0 +1,339 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #f4f7f5;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 240px;
+    background: #14532d;
+    color: white;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #22a05a;
+}
+
+.logout {
+    margin-top: auto;
+}
+
+/* Main Content */
+
+.main-content {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    padding: 30px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.topbar h1 {
+    color: #14532d;
+    margin-bottom: 8px;
+}
+
+.topbar p,
+.section-header p {
+    color: #777;
+}
+
+button {
+    border: none;
+    background: #15803d;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #166534;
+}
+
+/* Stats */
+
+.stats-container {
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 280px;
+    box-shadow: 0 3px 12px #0000000d;
+}
+
+.stat-icon {
+    background: #e4f5e9;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+.stat-card p {
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.stat-card h2 {
+    color: #14532d;
+}
+
+/* Form */
+
+.form-section,
+.products-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px #0000000d;
+}
+
+.form-section h2,
+.section-header h2 {
+    color: #14532d;
+    margin-bottom: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+    width: 100%;
+}
+
+.form-group input:focus,
+#search-product:focus {
+    border-color: #15803d;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.cancel-btn {
+    background: #777;
+}
+
+.cancel-btn:hover {
+    background: #555;
+}
+
+/* Product Table */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+#search-product {
+    width: 280px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+th {
+    background: #e9f5ec;
+    color: #14532d;
+    text-align: left;
+    padding: 15px;
+}
+
+td {
+    padding: 13px 15px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+}
+
+tr:hover td {
+    background: #f8fcf9;
+}
+
+.product-image {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.edit-btn {
+    background: #2563eb;
+    padding: 8px 12px;
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background: #1d4ed8;
+}
+
+.delete-btn {
+    background: #dc2626;
+    padding: 8px 12px;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+
+#message {
+    margin-bottom: 15px;
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+        padding: 20px;
+    }
+
+    .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #search-product {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        width: 65px;
+        padding: 15px 5px;
+    }
+
+    .sidebar h2 {
+        font-size: 0;
+    }
+
+    .sidebar nav a,
+    .logout {
+        font-size: 0;
+        text-align: center;
+        padding: 15px 5px;
+    }
+
+    .sidebar nav a::first-letter,
+    .logout::first-letter {
+        font-size: 20px;
+    }
+
+    .main-content {
+        margin-left: 65px;
+        width: calc(100% - 65px);
+        padding: 15px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section,
+    .products-section {
+        padding: 15px;
+    }
+
+    .stat-card {
+        width: 100%;
+    }
+}
