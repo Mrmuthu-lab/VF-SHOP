@@ -1,8 +1,8 @@
-
 package com.vfshop.vfshop_backend.service;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
 import java.util.Base64;
@@ -55,14 +55,19 @@ public class ForgotPasswordService {
         OtpData previous = otpStorage.get(email);
 
         if (previous != null &&
-                previous.createdAt.plusSeconds(60).isAfter(LocalDateTime.now())) {
+                previous.createdAt.plusSeconds(60)
+                        .isAfter(LocalDateTime.now())) {
+
             throw new ResponseStatusException(
                     HttpStatus.TOO_MANY_REQUESTS,
                     "Please wait before requesting another OTP."
             );
         }
 
-        String otp = String.format("%06d", random.nextInt(1000000));
+        String otp = String.format(
+                "%06d",
+                random.nextInt(1000000)
+        );
 
         OtpData data = new OtpData();
 
@@ -91,6 +96,7 @@ public class ForgotPasswordService {
         }
 
         if (LocalDateTime.now().isAfter(data.expiry)) {
+
             otpStorage.remove(email);
 
             throw new ResponseStatusException(
@@ -100,6 +106,7 @@ public class ForgotPasswordService {
         }
 
         if (data.attempts >= 5) {
+
             otpStorage.remove(email);
 
             throw new ResponseStatusException(
@@ -178,6 +185,7 @@ public class ForgotPasswordService {
         return "Password reset successfully.";
     }
 
+    // HASH
     private String hash(String value) {
 
         try {
@@ -190,11 +198,16 @@ public class ForgotPasswordService {
 
             return Base64.getEncoder().encodeToString(result);
 
-        } catch (Exception e) {
-            throw new IllegalStateException("Hashing failed", e);
+        } catch (NoSuchAlgorithmException e) {
+
+            throw new IllegalStateException(
+                    "Hashing failed",
+                    e
+            );
         }
     }
 
+    // GENERATE RESET TOKEN
     private String generateToken() {
 
         byte[] bytes = new byte[32];
@@ -206,6 +219,7 @@ public class ForgotPasswordService {
                 .encodeToString(bytes);
     }
 
+    // OTP DATA
     private static class OtpData {
         String otpHash;
         LocalDateTime createdAt;
@@ -213,6 +227,7 @@ public class ForgotPasswordService {
         int attempts;
     }
 
+    // RESET DATA
     private static class ResetData {
         String tokenHash;
         LocalDateTime expiry;

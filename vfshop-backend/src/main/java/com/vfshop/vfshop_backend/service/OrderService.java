@@ -1,4 +1,3 @@
-
 package com.vfshop.vfshop_backend.service;
 
 import java.util.ArrayList;
@@ -113,25 +112,24 @@ public class OrderService {
 
         String code = coupon.trim().toUpperCase(Locale.ROOT);
 
-        if (code.equals("FRESH10")) {
+        order.setCouponCode(code);
 
-            order.setCouponCode(code);
-            return Math.round(subtotal * 0.10 * 100.0) / 100.0;
+        return switch (code) {
 
-        } else if (code.equals("VF20")) {
+            case "FRESH10" ->
+                Math.round(subtotal * 0.10 * 100.0) / 100.0;
 
-            order.setCouponCode(code);
-            return Math.round(subtotal * 0.20 * 100.0) / 100.0;
+            case "VF20" ->
+                Math.round(subtotal * 0.20 * 100.0) / 100.0;
 
-        } else if (code.equals("SAVE50")) {
+            case "SAVE50" ->
+                Math.min(50, subtotal);
 
-            order.setCouponCode(code);
-            return Math.min(50, subtotal);
-        }
-
-        throw new ResponseStatusException(
-                HttpStatus.BAD_REQUEST,
-                "Invalid coupon code");
+            default -> throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Invalid coupon code"
+            );
+        };
     }
 
     // GET USER ORDERS

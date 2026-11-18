@@ -21,13 +21,17 @@ public class EmailService {
         message.setTo(email);
         message.setSubject("VF SHOP - Password Reset OTP");
 
-        message.setText(
-            "Hello,\n\n" +
-            "Your VF SHOP password reset OTP is: " + otp +
-            "\n\nThis OTP is valid for 5 minutes." +
-            "\nDo not share this OTP with anyone." +
-            "\n\nThank you,\nVF SHOP Team"
-        );
+        message.setText("""
+                Hello,
+
+                Your VF SHOP password reset OTP is: %s
+
+                This OTP is valid for 5 minutes.
+                Do not share this OTP with anyone.
+
+                Thank you,
+                VF SHOP Team
+                """.formatted(otp));
 
         mailSender.send(message);
     }
