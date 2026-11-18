@@ -1,7 +1,7 @@
 
 // VF SHOP - Product Add to Cart
 
-const PRODUCT_API_URL = "http://localhost:8080/api";
+const PRODUCT_API_URL = "https://vfshop-backend.onrender.com/api";
 
 document.addEventListener("DOMContentLoaded", async () => {
 

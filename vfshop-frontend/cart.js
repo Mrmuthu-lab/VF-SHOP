@@ -3,7 +3,7 @@
 // VF SHOP - CART MANAGEMENT
 // =====================================
 
-const API_URL = "http://localhost:8080/api";
+const API_URL = "https://vfshop-backend.onrender.com/api";
 
 let cart = [];
 let currentUser = null;
@@ -30,11 +30,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    // Restore previously applied coupon
     appliedCoupon = localStorage.getItem("vfshop_coupon");
 
-    document.getElementById("checkout-btn")
-        .addEventListener("click", goToCheckout);
+    const checkoutButton = document.getElementById("checkout-btn");
+
+    if (checkoutButton) {
+        checkoutButton.addEventListener("click", goToCheckout);
+    }
 
     await loadCart();
 });
@@ -95,8 +97,12 @@ async function loadCart() {
 
         console.error("Cart Error:", error);
 
-        document.querySelector(".cart-items").innerHTML =
-            "<p>Unable to load cart. Please refresh the page.</p>";
+        const container = document.querySelector(".cart-items");
+
+        if (container) {
+            container.innerHTML =
+                "<p>Unable to load cart. Please refresh the page.</p>";
+        }
     }
 }
 
@@ -107,6 +113,11 @@ async function loadCart() {
 function renderCart() {
 
     const container = document.querySelector(".cart-items");
+
+    if (!container) {
+        console.error("Cart container .cart-items not found");
+        return;
+    }
 
     if (cart.length === 0) {
 
@@ -229,7 +240,6 @@ function applyCoupon() {
         return;
     }
 
-    // Save coupon for checkout page
     appliedCoupon = code;
     localStorage.setItem("vfshop_coupon", code);
 
@@ -248,7 +258,6 @@ function removeCoupon() {
     appliedCoupon = null;
     discountAmount = 0;
 
-    // Remove saved coupon
     localStorage.removeItem("vfshop_coupon");
 
     const input = document.getElementById("couponCode");
@@ -285,7 +294,6 @@ function updateSummary() {
         localStorage.removeItem("vfshop_coupon");
     }
 
-    // Recalculate discount when quantity changes
     if (appliedCoupon === "FRESH10") {
         discountAmount = subtotal * 0.10;
     }
@@ -301,22 +309,35 @@ function updateSummary() {
 
     const total = Math.max(0, subtotal + delivery - discountAmount);
 
-    document.querySelector(".summary-subtotal").textContent =
-        "₹" + subtotal.toFixed(2);
+    const subtotalElement = document.querySelector(".summary-subtotal");
+    const deliveryElement = document.querySelector(".summary-delivery");
+    const discountElement = document.querySelector(".summary-discount");
+    const totalElement = document.querySelector(".summary-total-amount");
+    const checkoutButton = document.getElementById("checkout-btn");
 
-    document.querySelector(".summary-delivery").textContent =
-        delivery === 0 && cart.length > 0
-            ? "FREE"
-            : "₹" + delivery.toFixed(2);
+    if (subtotalElement) {
+        subtotalElement.textContent = "₹" + subtotal.toFixed(2);
+    }
 
-    document.querySelector(".summary-discount").textContent =
-        "- ₹" + discountAmount.toFixed(2);
+    if (deliveryElement) {
+        deliveryElement.textContent =
+            delivery === 0 && cart.length > 0
+                ? "FREE"
+                : "₹" + delivery.toFixed(2);
+    }
 
-    document.querySelector(".summary-total-amount").textContent =
-        "₹" + total.toFixed(2);
+    if (discountElement) {
+        discountElement.textContent =
+            "- ₹" + discountAmount.toFixed(2);
+    }
 
-    document.getElementById("checkout-btn").disabled =
-        cart.length === 0;
+    if (totalElement) {
+        totalElement.textContent = "₹" + total.toFixed(2);
+    }
+
+    if (checkoutButton) {
+        checkoutButton.disabled = cart.length === 0;
+    }
 }
 
 // =====================================
